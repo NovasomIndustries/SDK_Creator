@@ -39,5 +39,5 @@ done
 
 sudo apt-get update
 sudo apt-get autoremove
-sudo apt-get install -y build-essential git wget cpio unzip rsync bc libncurses5-dev screen curl qt5-default qtcreator codeblocks meld libfl-dev patchelf cmake
+sudo apt-get install -y build-essential git wget cpio unzip rsync bc libncurses5-dev screen curl qt5-default qtcreator codeblocks meld libfl-dev patchelf cmake filezilla
 
