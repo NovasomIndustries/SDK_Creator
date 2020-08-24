@@ -19,15 +19,14 @@ for i in ${DIRS}; do
 done
 git clone https://github.com/NovasomIndustries/Utils-2020.09.git
 git clone https://github.com/NovasomIndustries/XCompilers-2020.09.git
-cd Qt
-git clone https://github.com/NovasomIndustries/NOVAembed-2020_09.git
-ln -s NOVAembed-2020_09 NOVAembed
-cd ..
-
 ln -s Utils-2020.09 Utils
 ln -s XCompilers-2020.09 XCompilers
 ln -s Doc-2020.09 Doc
 ln -s Packages-2020.09 Packages
+cd Utils
+./clone_novaembed
+cd ..
+
 cd FileSystems
 ln -s ../Utils/rock/rk_external external
 cd ..
