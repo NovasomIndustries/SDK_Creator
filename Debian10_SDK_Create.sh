@@ -1,6 +1,9 @@
 #!/bin/sh
 DIRS="AutoRun Codeblocks DtbUserWorkArea FileSystems Logs Qt Bootloaders Deploy Doc-2020.09 ExternalFileSystems Kernels NOVAembed_Settings Packages-2020.09"
 COMPILERS="gcc-7.x-aarch64-eabihf.tar.bz2  gcc-7.x-aarch64-plus-eabihf.tar.bz2  gcc-7.x-arm-eabihf.tar.bz2"
+DEBIAN_PACKAGES="build-essential git wget cpio unzip rsync bc libncurses5-dev screen curl qt5-default qtcreator codeblocks meld libfl-dev patchelf cmake filezilla libssl-dev pkg-config u-boot-tools"
+
+
 if ! [ -d /Devel ]; then
 	echo "Please create a world readable folder called \"/Devel\""
 	exit -1
@@ -11,7 +14,17 @@ if [ -d NOVAsdk2020.09 ]; then
 	echo "Dir NOVAsdk2020.09 is present. Remove it before continuing"
 	exit
 fi
+
 mkdir NOVAsdk2020.09
+if ! [ -d NOVAsdk2020.09 ]; then
+	echo "Unable to create NOVAsdk2020.09. Adjust permissions before continuing"
+	exit
+fi
+
+sudo apt-get update
+sudo apt-get autoremove
+sudo apt-get install -y build-essential git wget cpio unzip rsync bc libncurses5-dev screen curl qt5-default qtcreator codeblocks meld libfl-dev patchelf cmake filezilla libssl-dev pkg-config u-boot-tools
+
 ln -s NOVAsdk2020.09 NOVAsdk
 cd NOVAsdk
 for i in ${DIRS}; do
@@ -37,7 +50,4 @@ for i in ${COMPILERS}; do
 	tar jxf ${i}
 done
 
-sudo apt-get update
-sudo apt-get autoremove
-sudo apt-get install -y build-essential git wget cpio unzip rsync bc libncurses5-dev screen curl qt5-default qtcreator codeblocks meld libfl-dev patchelf cmake filezilla libssl-dev pkg-config u-boot-tools
 
