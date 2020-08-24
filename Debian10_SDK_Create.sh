@@ -1,7 +1,7 @@
 #!/bin/sh
 DIRS="AutoRun Codeblocks DtbUserWorkArea FileSystems Logs Qt Bootloaders Deploy Doc-2020.09 ExternalFileSystems Kernels NOVAembed_Settings Packages-2020.09"
 COMPILERS="gcc-7.x-aarch64-eabihf.tar.bz2  gcc-7.x-aarch64-plus-eabihf.tar.bz2  gcc-7.x-arm-eabihf.tar.bz2"
-DEBIAN_PACKAGES="build-essential git wget cpio unzip rsync bc libncurses5-dev screen curl qt5-default qtcreator codeblocks meld libfl-dev patchelf cmake filezilla libssl-dev pkg-config u-boot-tools"
+DEBIAN_PACKAGES="build-essential git wget cpio unzip rsync bc libncurses5-dev screen curl qt5-default qtcreator codeblocks meld libfl-dev patchelf cmake filezilla libssl-dev pkg-config u-boot-tools net-tools"
 
 
 if ! [ -d /Devel ]; then
