@@ -21,6 +21,7 @@ git clone https://github.com/NovasomIndustries/Utils-2020.09.git
 git clone https://github.com/NovasomIndustries/XCompilers-2020.09.git
 ln -s Utils-2020.09 Utils
 ln -s XCompilers-2020.09 XCompilers
+rm -rf XCompilers/.git
 ln -s Doc-2020.09 Doc
 ln -s Packages-2020.09 Packages
 cd Utils
